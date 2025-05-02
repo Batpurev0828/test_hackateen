@@ -7,7 +7,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchdata() {
       try {
-        const response = await fetch("https://test-hackateen.onrender.com");
+        const response = await fetch("https://test-hackateen.onrender.com/api/fetchdata");
         const result = await response.json();
         console.log(result);
         setItems(result);
