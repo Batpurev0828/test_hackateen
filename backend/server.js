@@ -5,8 +5,9 @@ import Items from "./models/items.js";
 import cors from 'cors';
 
 const app = express();
+const FRONT_URI = process.env.FRONT_URI;
 app.use(cors({
-    origin: 'http://localhost:3000'
+    origin: FRONT_URI
 }));
 const URI = process.env.URI;
 const PORT = process.env.PORT || 8000;

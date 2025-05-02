@@ -1,13 +1,13 @@
 "use client"
 import { useEffect, useState } from "react";
-
+import 'dotenv/config';
 export default function Home() {
   const [items, setItems] = useState([]);
-
+  const BACK_URI = process.env.BACK_URI;
   useEffect(() => {
     async function fetchdata() {
       try {
-        const response = await fetch('http://localhost:8000/api/fetchdata');
+        const response = await fetch(BACK_URI);
         const result = await response.json();
         console.log(result);
         setItems(result);
