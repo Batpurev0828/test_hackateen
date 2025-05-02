@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import 'dotenv/config';
 export default function Home() {
   const [items, setItems] = useState([]);
-  const BACK_URI = process.env.BACK_URI;
+  // const BACK_URI = process.env.BACK_URI;
   useEffect(() => {
     async function fetchdata() {
       try {
-        const response = await fetch(BACK_URI);
+        const response = await fetch("https://test-hackateen.onrender.com");
         const result = await response.json();
         console.log(result);
         setItems(result);
